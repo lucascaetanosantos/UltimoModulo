@@ -6,29 +6,82 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"></link>
         <title>Home</title>
     </h:head>
     <h:body>
-        <h:panelGrid columns="2">
-            <h:outputLabel value="Nome do Cliente"/>
-            <h:inputText size="60"/>
-            <h:outputLabel value="Nome do Cliente(2)"/>
-            <h:inputText size="60"/>
-            <h:outputLabel value="Selecione"/>
-            <h:selectOneMenu>
-                <f:selectItem itemLabel="Teste"/>
-            </h:selectOneMenu>
-            <h:outputLabel value="Check"/>
-            <h:selectManyCheckbox>
-                <f:selectItem itemLabel="Teste"/>
-            </h:selectManyCheckbox>
-            <h:outputLabel value="Radio"/>
-            <h:selectOneRadio>
-                <f:selectItem itemLabel="Teste"/>
-            </h:selectOneRadio>
-            <h:outputLabel value="Texto Area"/>
-            <h:inputTextarea/>
-        </h:panelGrid>
+        <h:outputStylesheet library="awesome" name="css/font-awesome.css" />
+        <h:form>
+            <p:menubar>
+
+                <p:menuitem value="Home" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+
+                <p:submenu label="Arquivo" icon="ui-icon-document">
+                    <p:submenu label="Novo" icon="ui-icon-contact">
+                        <p:menuitem value="Projeto" url="#" />
+                        <p:menuitem value="Outro" url="#" />
+                    </p:submenu>
+                    <p:menuitem value="Abrir" url="#" />
+                    <p:separator />
+                    <p:menuitem value="Sair" url="#" />
+                </p:submenu>
+
+                <p:submenu label="Editar" icon="ui-icon-pencil">
+                    <p:menuitem value="Voltar" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+                    <p:menuitem value="Avançar" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                </p:submenu>
+
+                <p:submenu label="Ajuda" icon="ui-icon-help">
+                    <p:menuitem value="Componentes" url="#" />
+                    <p:submenu label="Pesquisar" icon="ui-icon-search">
+                        <p:submenu label="pesquisa">
+                            <p:menuitem value="Workspace" url="#" />
+                        </p:submenu>
+                        <p:menuitem value="Arquivo" url="#" />
+                    </p:submenu>
+                </p:submenu>
+
+
+                <p:menuitem value="Sair" url="#" icon="fa fa-refresh" />
+
+                <f:facet name="options">
+                    <p:inputText style="margin-right:10px" placeholder="Search"/>
+                    <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+                </f:facet>
+            </p:menubar>
+        </h:form>
+
+        <p:panel header="Senai">
+            <h:panelGrid columns="2">
+                <p:outputLabel value="Nome do Cliente"/>
+                <p:inputText size="60"/>
+
+                <p:outputLabel value="Nome do Cliente(2)"/>
+                <p:inputText size="60"/>
+
+                <p:outputLabel value="Selecione"/>
+                <p:selectOneMenu>
+                    <f:selectItem itemLabel="Teste" itemValue="asd"/>
+                    <f:selectItem itemLabel="Teste2" itemValue="jkl"/>
+                </p:selectOneMenu>
+
+                <p:outputLabel value="Check"/>
+                <p:selectManyCheckbox>
+                    <f:selectItem itemLabel="Teste"/>
+                </p:selectManyCheckbox>
+
+                <p:outputLabel value="Radio"/>
+                <p:selectOneRadio>
+                    <f:selectItem itemLabel="Teste"/>
+                </p:selectOneRadio>
+
+                <p:outputLabel value="Texto Area"/>
+                <p:inputTextarea/>
+
+                <p:outputLabel/>
+                <p:button value="Enviar"/>
+            </h:panelGrid>
+        </p:panel>
     </h:body>
 </html>
 
